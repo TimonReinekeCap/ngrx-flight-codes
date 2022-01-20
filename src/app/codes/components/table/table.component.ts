@@ -6,15 +6,16 @@ import { Code } from '../../models/code';
   templateUrl: './table.component.html',
   styleUrls: ['./table.component.css']
 })
-export class TableComponent implements OnInit {
-  @Input() codes!: Code[];
-  @Output() readonly addCode = new EventEmitter<void>();
+export class TableComponent {
+  @Input() codes!: Code[] | null;
+  @Output() readonly refresh = new EventEmitter<void>();
 
   displayedColumns: string[] = ['code', 'from', 'to', 'airline', 'time', 'flightCount'];
 
   constructor() { }
 
-  ngOnInit(): void {
+  doRefresh(): void {
+    this.refresh.next();
   }
 
 }

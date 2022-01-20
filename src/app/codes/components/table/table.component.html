@@ -1,4 +1,4 @@
-<table mat-table [dataSource]="codes">
+<table mat-table [dataSource]="codes" *ngIf="codes">
   <ng-container matColumnDef="code">
     <th mat-header-cell *matHeaderCellDef> Code </th>
     <td mat-cell *matCellDef="let element"> {{element.code}} </td>
@@ -25,7 +25,11 @@
   </ng-container>
 
   <ng-container matColumnDef="flightCount">
-    <th mat-header-cell *matHeaderCellDef> Flight Count </th>
+    <th mat-header-cell *matHeaderCellDef>
+      Flight Count <button mat-icon-button color="primary" aria-label="Example icon-button with a heart icon" (click)="doRefresh()">
+        <mat-icon>refresh</mat-icon>
+      </button>
+    </th>
     <td mat-cell *matCellDef="let element"> {{element.flightCount}} </td>
   </ng-container>
 

@@ -1,3 +1,3 @@
 <app-indicator *ngIf="isLoading$ | async"></app-indicator>
-<app-table *ngIf="codes$ | async; let codes" [codes]="codes"></app-table>
+<app-table [codes]="codes$ | async" (refresh)="loadCodes()"></app-table>
 <app-error *ngIf="showError$ | async" (retryLoad)="loadCodes()"></app-error>

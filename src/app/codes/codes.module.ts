@@ -11,6 +11,8 @@ import { TableComponent } from './components/table/table.component';
 import { ErrorComponent } from './components/error/error.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatProgressBarModule } from '@angular/material/progress-bar';
+import { MatButtonModule } from '@angular/material/button';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
@@ -24,6 +26,8 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
     CodesRoutingModule,
     MatTableModule,
     MatProgressBarModule,
+    MatButtonModule,
+    MatIconModule,
     StoreModule.forFeature('codes', codesReducer),
     EffectsModule.forFeature([CodesEffects]),
   ],
